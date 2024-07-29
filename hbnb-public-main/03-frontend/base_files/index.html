@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Places - HBnB</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon/favicon-32x32.png" type="image/png"> Favicon 
+    <link rel="icon" href="favicon/favicon-32x32.png" type="image/png"> <!-- Favicon -->
 </head>
 <body>
     <header class="header-container">
@@ -27,6 +27,29 @@
     <main>
         <section class="places">
             <h1>Available Places</h1>
+            <!-- Country Filter Section -->
+            <section class="country-filter">
+                <label for="country-select">Filter by Country:</label>
+                <select id="country-select">
+                    <option value="">Select a Country</option>
+                    <option value="US">United States</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="MX">Mexico</option>
+                    <option value="BR">Brazil</option>
+                    <option value="AR">Argentina</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                    <option value="IT">Italy</option>
+                    <option value="ES">Spain</option>
+                    <option value="JP">Japan</option>
+                    <option value="CN">China</option>
+                    <option value="IN">India</option>
+                    <option value="RU">Russia</option>
+                    <option value="AU">Australia</option>
+                </select>
+            </section>
+
             <div class="place-card">
                 <img src="place1.jpg" alt="Beautiful Beach House" class="place-image">
                 <h2>Beautiful Beach House</h2>

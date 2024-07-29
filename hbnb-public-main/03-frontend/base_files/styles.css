@@ -126,6 +126,47 @@ main {
     text-align: center;
     padding: 20px;
 }
+.country-filter {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.country-filter label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.country-filter select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Ensure place cards are properly styled */
+.place-card {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.place-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.details-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 .place-card {
     display: inline-block;
