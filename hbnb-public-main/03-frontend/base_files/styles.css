@@ -89,6 +89,7 @@ main {
     border-radius: 10px;
     width: 300px;
     text-align: center;
+    margin-left: 500px;
 }
 
 .login-form h1 {
