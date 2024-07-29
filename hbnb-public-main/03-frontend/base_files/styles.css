@@ -2,10 +2,11 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: Arial, sans-serif; /* Font - Flexible */
+    background-color: #faf2f2c5;
     color: #333;
     height: 100%;
+    
 }
 
 body {
@@ -18,7 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FFA500;
+    background-color: #FFA500; /* Color Palette - Flexible */
     padding: 10px 20px;
 }
 
@@ -52,7 +53,7 @@ body {
 }
 
 .nav-bar ul li a:hover {
-    color: #ff8800;
+    color: #ff8800; /* Color Palette - Flexible */
 }
 
 /* Login Button Styles */
@@ -66,27 +67,28 @@ body {
     color: white;
     font-weight: bold;
     padding: 10px 20px;
-    background-color: #FFA500;
+    background-color: #FFA500; /* Color Palette - Flexible */
     border: 2px solid white;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .login-button a:hover {
-    background-color: #ff8800;
+    background-color: #ff8800; /* Color Palette - Flexible */
 }
 
 main {
     flex: 1;
     padding: 20px;
+    background-color: #ccc;
 }
 
 /* Login Form Styles */
 .login-form {
     background-color: white;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    border: 1px solid #ddd; /* Border */
+    border-radius: 10px; /* Border Radius */
     width: 300px;
     text-align: center;
     margin-left: 500px;
@@ -108,7 +110,7 @@ main {
 }
 
 .login-form button {
-    background-color: #FFA500;
+    background-color: #FFA500; /* Color Palette - Flexible */
     color: white;
     border: none;
     border-radius: 5px;
@@ -118,7 +120,7 @@ main {
 }
 
 .login-form button:hover {
-    background-color: #ff8800;
+    background-color: #ff8800; /* Color Palette - Flexible */
 }
 
 /* Places Section Styles */
@@ -126,10 +128,11 @@ main {
     text-align: center;
     padding: 20px;
 }
+
 .country-filter {
     margin: 20px 0;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Border */
     border-radius: 5px;
     background-color: #f9f9f9;
 }
@@ -146,35 +149,14 @@ main {
     font-size: 16px;
 }
 
-/* Ensure place cards are properly styled */
+/* Place Cards Styles */
 .place-card {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
-
-.place-image {
-    max-width: 100%;
-    height: auto;
-}
-
-.details-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.place-card {
+    margin: 20px; /* Margin */
+    padding: 10px; /* Padding */
+    border: 1px solid #ddd; /* Border */
+    border-radius: 10px; /* Border Radius */
     display: inline-block;
     background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
     width: 300px;
     vertical-align: top;
     box-sizing: border-box;
@@ -182,11 +164,11 @@ main {
 
 .place-image {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 10px; /* Border Radius */
 }
 
 .details-button {
-    background-color: #FFA500;
+    background-color: #FFA500; /* Color Palette - Flexible */
     color: white;
     border: none;
     border-radius: 5px;
@@ -196,24 +178,33 @@ main {
 }
 
 .details-button:hover {
-    background-color: #ff8800;
+    background-color: #ff8800; /* Color Palette - Flexible */
 }
 
 /* Place Details, Reviews, and Add Review Styles */
- .reviews, .add-review {
+ .add-review {
     background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    border: 1px solid #ddd; /* Border */
+    border-radius: 10px; /* Border Radius */
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
     box-sizing: border-box;
-   
 }
-.place-details{
+.reviews{
     background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    border: 1px solid #ddd; /* Border */
+    border-radius: 10px; /* Border Radius */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+.place-details {
+    background-color: white;
+    border: 1px solid #ddd; /* Border */
+    border-radius: 10px; /* Border Radius */
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
@@ -223,13 +214,13 @@ main {
 
 .place-image-large {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 10px; /* Border Radius */
 }
 
 .review-card {
     margin: 10px 0;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; /* Border */
 }
 
 .add-review textarea {
@@ -240,8 +231,8 @@ main {
 }
 
 .add-review button {
-    background-color: #FFA500;
-    width:100%;
+    background-color: #FFA500; /* Color Palette - Flexible */
+    width: 100%;
     color: white;
     border: none;
     border-radius: 5px;
@@ -249,21 +240,26 @@ main {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+/*rating 
+id for the select in the rating adding form */
+#rating {
 
-.add-review button:hover {
-    background-color: #ff8800;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 21px;
+    height: 25px;
 }
 
-/* #rating{
-    width: 100%;
-    margin: auto;
-} */
+.add-review button:hover {
+    background-color: #ff8800; /* Color Palette - Flexible */
+}
+
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #FFA500;
+    background-color: #FFA500; /* Color Palette - Flexible */
     color: white;
     margin-bottom: 10px;
-    padding :10px;
+    padding: 10px;
 }
