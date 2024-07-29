@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Places - HBnB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="logo">
+            <img src="logo.png" alt="HBnB Logo">
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="place.html">Places</a></li>
+                <li><a href="add_review.html">Reviews</a></li>
+            </ul>
+        </nav>
+        <div class="login-button">
+            <a href="login.html">Login</a>
+        </div>
+    </header>
+    
+    <main>
+        <section class="places">
+            <h1>Available Places</h1>
+            <div class="place-card">
+                <img src="place1.jpg" alt="Beautiful Beach House" class="place-image">
+                <h2>Beautiful Beach House</h2>
+                <p>Price per night: $150</p>
+                <p>Location: Los Angeles, United States</p>
+                <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
+            </div>
+            <div class="place-card">
+                <img src="place2.jpg" alt="Cozy Cabin" class="place-image">
+                <h2>Cozy Cabin</h2>
+                <p>Price per night: $100</p>
+                <p>Location: Toronto, Canada</p>
+                <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
+            </div>
+            <div class="place-card">
+                <img src="place3.jpg" alt="Modern Apartment" class="place-image">
+                <h2>Modern Apartment</h2>
+                <p>Price per night: $200</p>
+                <p>Location: New York, United States</p>
+                <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 HBnB Evolution. All rights reserved.</p>
+    </footer>
+</body>
+</html>
