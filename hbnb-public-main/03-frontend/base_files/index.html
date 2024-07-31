@@ -27,54 +27,24 @@
     <main>
         <section class="places">
             <h1>Available Places</h1>
-            <!-- Country Filter Section -->
             <section class="country-filter">
                 <label for="country-select">Filter by Country:</label>
                 <select id="country-select">
                     <option value="">Select a Country</option>
                     <option value="US">United States</option>
-                    <option value="UY">Uruguay</option>
-                    <option value="MX">Mexico</option>
-                    <option value="BR">Brazil</option>
-                    <option value="AR">Argentina</option>
-                    <option value="GB">United Kingdom</option>
-                    <option value="FR">France</option>
-                    <option value="DE">Germany</option>
-                    <option value="IT">Italy</option>
-                    <option value="ES">Spain</option>
-                    <option value="JP">Japan</option>
-                    <option value="CN">China</option>
-                    <option value="IN">India</option>
-                    <option value="RU">Russia</option>
-                    <option value="AU">Australia</option>
+                    <option value="CA">Canada</option>
+                    <!-- Add more countries as needed -->
                 </select>
             </section>
 
-            <div class="place-card">
-                <img src="place1.jpg" alt="Beautiful Beach House" class="place-image">
-                <h2>Beautiful Beach House</h2>
-                <p>Price per night: $150</p>
-                <p>Location: Los Angeles, United States</p>
-                <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
-            </div>
-            <div class="place-card">
-                <img src="place2.jpg" alt="Cozy Cabin" class="place-image">
-                <h2>Cozy Cabin</h2>
-                <p>Price per night: $100</p>
-                <p>Location: Toronto, Canada</p>
-                <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
-            </div>
-            <div class="place-card">
-                <img src="place3.jpg" alt="Modern Apartment" class="place-image">
-                <h2>Modern Apartment</h2>
-                <p>Price per night: $200</p>
-                <p>Location: New York, United States</p>
-                <button class="details-button" onclick="window.location.href='place.html';">View Details</button>
+            <div id="places-list">
+                <!-- Dynamic content will be inserted here -->
             </div>
         </section>
     </main>
     <footer>
         <p>© 2024 HBnB Evolution. All rights reserved.</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

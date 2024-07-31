@@ -17,6 +17,7 @@ with open('data/places.json') as f:
     places = json.load(f)
 
 new_reviews = []
+
 @app.route('/login', methods=['POST'])
 def login():
     print("Login endpoint hit")
@@ -35,9 +36,6 @@ def login():
     access_token = create_access_token(identity=user['id'])
     print(f"Generated access token: {access_token}")
     return jsonify(access_token=access_token)
-
-
-
 @app.route('/places', methods=['GET'])
 def get_places():
     print("Places endpoint hit")
