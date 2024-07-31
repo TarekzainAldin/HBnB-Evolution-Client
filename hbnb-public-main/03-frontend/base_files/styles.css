@@ -6,7 +6,6 @@ html, body {
     background-color: #faf2f2c5;
     color: #333;
     height: 100%;
-    
 }
 
 body {
@@ -15,6 +14,7 @@ body {
     min-height: 100vh;
 }
 
+/* Header Styles */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -83,46 +83,6 @@ main {
     background-color: #ccc;
 }
 
-/* Login Form Styles */
-.login-form {
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ddd; /* Border */
-    border-radius: 10px; /* Border Radius */
-    width: 300px;
-    text-align: center;
-    margin-left: 500px;
-}
-
-.login-form h1 {
-    margin-bottom: 20px;
-}
-
-.login-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.login-form label, .login-form input, .login-form button {
-    margin-bottom: 15px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.login-form button {
-    background-color: #FFA500; /* Color Palette - Flexible */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.login-form button:hover {
-    background-color: #ff8800; /* Color Palette - Flexible */
-}
-
 /* Places Section Styles */
 .places {
     text-align: center;
@@ -150,16 +110,21 @@ main {
 }
 
 /* Place Cards Styles */
+#places-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the grid */
+}
+
 .place-card {
-    margin: 20px; /* Margin */
-    padding: 10px; /* Padding */
     border: 1px solid #ddd; /* Border */
     border-radius: 10px; /* Border Radius */
-    display: inline-block;
     background-color: white;
-    width: 300px;
-    vertical-align: top;
+    padding: 10px; /* Padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    text-align: center;
 }
 
 .place-image {
@@ -181,79 +146,6 @@ main {
     background-color: #ff8800; /* Color Palette - Flexible */
 }
 
-/* Place Details, Reviews, and Add Review Styles */
- .add-review {
-    background-color: white;
-    border: 1px solid #ddd; /* Border */
-    border-radius: 10px; /* Border Radius */
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    box-sizing: border-box;
-}
-.reviews{
-    background-color: white;
-    border: 1px solid #ddd; /* Border */
-    border-radius: 10px; /* Border Radius */
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    box-sizing: border-box;
-}
-
-.place-details {
-    background-color: white;
-    border: 1px solid #ddd; /* Border */
-    border-radius: 10px; /* Border Radius */
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.place-image-large {
-    width: 100%;
-    border-radius: 10px; /* Border Radius */
-}
-
-.review-card {
-    margin: 10px 0;
-    padding: 10px;
-    border-bottom: 1px solid #ddd; /* Border */
-}
-
-.add-review textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-}
-
-.add-review button {
-    background-color: #FFA500; /* Color Palette - Flexible */
-    width: 100%;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-/*rating 
-id for the select in the rating adding form */
-#rating {
-
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 21px;
-    height: 25px;
-}
-
-.add-review button:hover {
-    background-color: #ff8800; /* Color Palette - Flexible */
-}
-
 /* Footer Styles */
 footer {
     text-align: center;
@@ -262,4 +154,17 @@ footer {
     color: white;
     margin-bottom: 10px;
     padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    #places-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 800px) {
+    #places-list {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
 }
