@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Beach House - HBnB</title>
+    <title>Place Details - HBnB</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,45 +22,57 @@
             <a href="login.html">Login</a>
         </div>
     </header>
+    
     <main>
-        <section class="place-details">
-            <img src="place-large.jpg" alt="Beautiful Beach House" class="place-image-large">
+        <section id="place-details">
             <h1>Beautiful Beach House</h1>
-            <p><strong>Host:</strong> John Doe</p>
-            <p><strong>Price per night:</strong> $150</p>
-            <p><strong>Location:</strong> Los Angeles, United States</p>
-            <p><strong>Description:</strong> A beautiful beach house with amazing views...</p>
-            <p><strong>Amenities:</strong> WiFi, Pool, Air Conditioning</p>
+            <div class="place-info">
+                <p><strong>Host:</strong> John Doe</p>
+                <p><strong>Price per night:</strong> $150</p>
+                <p><strong>Location:</strong> Los Angeles, United States</p>
+                <p><strong>Description:</strong> A beautiful beach house with amazing views...</p>
+                <p><strong>Amenities:</strong> WiFi, Pool, Air Conditioning</p>
+            </div>
         </section>
-        <section class="reviews">
+
+        <section id="reviews">
             <h2>Reviews</h2>
-            <div class="review-card">
-                <p><strong>Jane Smith:</strong> Great place to stay!</p>
+            <div class="review">
+                <p><strong>Jane Smith:</strong></p>
+                <p>Great place to stay!</p>
                 <p>Rating: ★★★★★</p>
             </div>
-            <div class="review-card">
-                <p><strong>Robert Brown:</strong> Amazing location and very comfortable.</p>
+            <div class="review">
+                <p><strong>Robert Brown:</strong></p>
+                <p>Amazing location and very comfortable.</p>
                 <p>Rating: ★★★★★</p>
             </div>
         </section>
-        <section class="add-review">
+
+        <section id="add-review">
             <h2>Add a Review</h2>
-            <form action="add_review.html" method="post" class="form">
-                <textarea name="review" placeholder="Your Review" required></textarea>
+            <form id="review-form">
+                <label for="review-text">Your Review:</label>
+                <textarea id="review-text" name="review-text" required></textarea>
+
                 <label for="rating">Rating:</label>
-                <select name="rating" id="rating">
+                <select id="rating" name="rating">
                     <option value="1">1 Star</option>
                     <option value="2">2 Stars</option>
                     <option value="3">3 Stars</option>
                     <option value="4">4 Stars</option>
                     <option value="5">5 Stars</option>
                 </select>
+
                 <button type="submit">Submit Review</button>
             </form>
         </section>
     </main>
+
     <footer>
         <p>© 2024 HBnB Evolution. All rights reserved.</p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
