@@ -23,19 +23,24 @@
         </div>
     </header>
     <main>
-        <section class="add-review">
-            <h1>Add a Review</h1>
-            <form action="submit_review.html" method="post" class="form">
-                <textarea name="review" placeholder="Your Review" required></textarea>
+        <section id="add-review">
+            <h2>Add a Review</h2>
+            <form id="review-form">
+                <label for="review-text">Your Review:</label>
+                <textarea id="review-text" name="review-text" required></textarea>
+
                 <label for="rating">Rating:</label>
-                <select name="rating" id="rating">
+                <select id="rating" name="rating">
                     <option value="1">1 Star</option>
                     <option value="2">2 Stars</option>
                     <option value="3">3 Stars</option>
                     <option value="4">4 Stars</option>
                     <option value="5">5 Stars</option>
                 </select>
+
                 <button type="submit">Submit Review</button>
+            </form>
+        </section>
             </form>
         </section>
     </main>
