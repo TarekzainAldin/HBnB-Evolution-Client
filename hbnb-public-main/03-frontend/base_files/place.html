@@ -24,6 +24,72 @@
     </header>
     
     <main>
+        <img src="place-large.jpg" alt="" style="width: 400px ; height:200px;  margin-left:750px  ;margin-bottom: 20px;">
+        <section id="place-details">
+            <!-- Dynamic content will be inserted here -->
+        </section>
+
+        <section id="reviews">
+            <h2>Reviews</h2>
+            <!-- Reviews will be dynamically loaded here -->
+        </section>
+
+        <section id="add-review" style="display:none;">
+            <h2>Add a Review</h2>
+            <form id="review-form">
+                <label for="review-text">Your Review:</label>
+                <textarea id="review-text" name="review-text" required></textarea>
+
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating">
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 HBnB Evolution. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Details - HBnB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="logo">
+            <img src="logo.png" alt="HBnB Logo">
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="place.html">Places</a></li>
+                <li><a href="add_review.html">Reviews</a></li>
+            </ul>
+        </nav>
+        <div class="login-button">
+            <a href="login.html">Login</a>
+        </div>
+    </header>
+    
+    <main>
         <section id="place-details">
             <h1>Beautiful Beach House</h1>
             <div class="place-info">
@@ -75,4 +141,4 @@
 
     <script src="scripts.js"></script>
 </body>
-</html>
+</html> -->

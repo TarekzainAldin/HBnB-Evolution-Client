@@ -36,12 +36,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check if the user is authenticated and display places
     checkAuthentication();
-    
+
     // Country filter handling
-    document.getElementById('country-select').addEventListener('change', (event) => {
-        const selectedCountry = event.target.value;
-        filterPlacesByCountry(selectedCountry);
-    });
+    const countrySelect = document.getElementById('country-select');
+    if (countrySelect) {
+        countrySelect.addEventListener('change', (event) => {
+            const selectedCountry = event.target.value;
+            filterPlacesByCountry(selectedCountry);
+        });
+    }
+
+    // For Place Details page
+    if (window.location.pathname.includes('place.html')) {
+        const placeId = getPlaceIdFromURL();
+        const token = getCookie('token');
+        if (token) {
+            fetchPlaceDetails(token, placeId);
+        } else {
+            alert("You need to log in to view place details.");
+            window.location.href = 'login.html';
+        }
+    }
 });
 
 // Function to get the value of a cookie by name
@@ -55,13 +70,18 @@ function getCookie(name) {
 // Check authentication status and fetch places if authenticated
 async function checkAuthentication() {
     const token = getCookie('token');
-    const loginLink = document.querySelector('.login-button');
+    const loginLink = document.querySelector('.login-button a');
+    const addReviewSection = document.getElementById('add-review');
 
-    if (!token) {
-        loginLink.style.display = 'block';
-    } else {
-        loginLink.style.display = 'none';
-        await fetchPlaces(token); // Fetch places data if the user is authenticated
+    if (loginLink) {
+        if (!token) {
+            loginLink.style.display = 'block';
+            if (addReviewSection) addReviewSection.style.display = 'none';
+        } else {
+            loginLink.style.display = 'none';
+            if (addReviewSection) addReviewSection.style.display = 'block';
+            await fetchPlaces(token); // Fetch places data if the user is authenticated
+        }
     }
 }
 
@@ -88,6 +108,11 @@ async function fetchPlaces(token) {
 // Display places on the page
 function displayPlaces(places) {
     const placesList = document.getElementById('places-list');
+    if (!placesList) {
+        console.error("No element with ID 'places-list' found.");
+        return;
+    }
+
     placesList.innerHTML = ''; // Clear existing places
 
     places.forEach(place => {
@@ -108,9 +133,10 @@ function displayPlaces(places) {
 // Populate the country select dropdown
 async function populateCountrySelect() {
     const countrySelect = document.getElementById('country-select');
+    if (!countrySelect) return;
 
     try {
-        const response = await fetch('/home/tarek/HBnB-Evolution-Client/hbnb-public-main/03-frontend/mock-api/data/countries.json   '); // Replace with the correct path
+        const response = await fetch('/home/tarek/HBnB-Evolution-Client/hbnb-public-main/03-frontend/mock-api/data/countries.json');
         if (response.ok) {
             const countries = await response.json();
             console.log('Fetched countries:', countries); // Debug log
@@ -137,5 +163,74 @@ function filterPlacesByCountry(countryCode) {
         const cardCountryCode = card.dataset.country; // Retrieve country code from data attribute
         console.log('Card country code:', cardCountryCode); // Debug log
         card.style.display = cardCountryCode === countryCode || countryCode === '' ? 'block' : 'none';
+    });
+}
+
+// Get place ID from URL
+function getPlaceIdFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+}
+
+// Fetch place details from the API
+async function fetchPlaceDetails(token, placeId) {
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/places/${placeId}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (response.ok) {
+            const place = await response.json();
+            displayPlaceDetails(place);
+            displayReviews(place.reviews);
+        } else {
+            console.error('Failed to fetch place details:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error fetching place details:', error);
+    }
+}
+
+// Display place details
+function displayPlaceDetails(place) {
+    const placeDetailsSection = document.getElementById('place-details');
+    if (!placeDetailsSection) {
+        console.error("No element with ID 'place-details' found.");
+        return;
+    }
+
+    placeDetailsSection.innerHTML = `
+        <h1>${place.description}</h1>
+        <div class="place-info">
+            <p><strong>Host:</strong> ${place.host_name}</p>
+            <p><strong>Price per night:</strong> $${place.price_per_night}</p>
+            <p><strong>Location:</strong> ${place.city_name}, ${place.country_name}</p>
+            <p><strong>Description:</strong> ${place.description}</p>
+            <p><strong>Amenities:</strong> ${place.amenities.join(', ')}</p>
+        </div>
+    `;
+}
+
+// Display reviews for the place
+function displayReviews(reviews) {
+    const reviewsSection = document.getElementById('reviews');
+    if (!reviewsSection) {
+        console.error("No element with ID 'reviews' found.");
+        return;
+    }
+
+    reviewsSection.innerHTML = ''; // Clear existing reviews
+
+    reviews.forEach(review => {
+        const reviewElement = document.createElement('div');
+        reviewElement.className = 'review';
+        reviewElement.innerHTML = `
+            <p><strong>${review.user_name}:</strong></p>
+            <p>${review.text}</p>
+            <p>Rating: ${'★'.repeat(review.rating)}</p>
+        `;
+        reviewsSection.appendChild(reviewElement);
     });
 }

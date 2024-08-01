@@ -237,9 +237,83 @@ footer {
     border-radius: 4px;
     cursor: pointer;
     align-self: start;
-    width: 100%;
+    width: 100%ù;
 }
 
 #review-form button:hover {
     background-color: #cc8400;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 50px auto; /* Center the form */
+    padding: 20px;
+    background-color: #ffffff; /* Background color for the form */
+    border: 1px solid #ddd; /* Border around the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: center;
+}
+
+.login-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-form button {
+    background-color: #FFA500; /* Consistent color with your theme */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #ff8800; /* Darker shade on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #FFA500; /* Color Palette - Flexible */
+    color: white;
+    margin-top: 20px; /* Adjusted for spacing from main content */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .login-form {
+        padding: 15px;
+    }
+    
+    .login-form h1 {
+        font-size: 20px;
+    }
+    
+    .login-form input,
+    .login-form button {
+        font-size: 14px;
+    }
 }
